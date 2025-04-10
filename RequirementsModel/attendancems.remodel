@@ -1,0 +1,442 @@
+UseCaseModel AttendanceMS {
+
+	UC::clockInOut definedBySSD(ClockInOutSSD) relatedService(ClockInOutService)
+	UC::viewAttendanceRecordByEmployee definedBySSD(ViewAttendanceRecordByEmployeeSSD) relatedService(ViewAttendanceRecordByEmployeeService)
+	UC::viewAttendanceRecordByManager definedBySSD(ViewAttendanceRecordByManagerSSD) relatedService(ViewAttendanceRecordByManagerService)
+	UC::generateAttendanceReport include viewAttendanceRecordByManager definedBySSD(GenerateAttendanceReportSSD) relatedService(GenerateAttendanceReportService)
+
+	Actor Employee {
+		clockInOut
+		viewAttendanceRecordByEmployee
+	}
+
+	Actor Manager {
+		viewAttendanceRecordByManager
+		generateAttendanceReport
+	}
+
+	Interaction ClockInOutSSD {
+
+		[Participants: Employee ClockInOutService]
+
+		CallMessage::ClockInOutSSDCallMessage1(startClockIn ClockInOutSSDCallMessage1SendingEnd -> ClockInOutSSDExecution1StartEnd)
+		ReturnMessage::ClockInOutSSDCallMessage1Return(ClockInOutSSDExecution1FinishEnd -> ClockInOutSSDCallMessage1ReturnReceivingEnd ClockInOutSSDCallMessage1)
+		CallMessage::ClockInOutSSDCallMessage3(recordClockTime ClockInOutSSDCallMessage3SendingEnd -> ClockInOutSSDExecution2StartEnd)
+		ReturnMessage::ClockInOutSSDCallMessage3Return(ClockInOutSSDExecution2FinishEnd -> ClockInOutSSDCallMessage3ReturnReceivingEnd ClockInOutSSDCallMessage3)
+		CallMessage::ClockInOutSSDCallMessage5(endClockIn ClockInOutSSDCallMessage5SendingEnd -> ClockInOutSSDExecution3StartEnd)
+		ReturnMessage::ClockInOutSSDCallMessage5Return(ClockInOutSSDExecution3FinishEnd -> ClockInOutSSDCallMessage5ReturnReceivingEnd ClockInOutSSDCallMessage5)
+
+		Execution::ClockInOutSSDExecution1(ClockInOutService ClockInOutSSDExecution1StartEnd ClockInOutSSDExecution1FinishEnd)
+		Execution::ClockInOutSSDExecution2(ClockInOutService ClockInOutSSDExecution2StartEnd ClockInOutSSDExecution2FinishEnd)
+		Execution::ClockInOutSSDExecution3(ClockInOutService ClockInOutSSDExecution3StartEnd ClockInOutSSDExecution3FinishEnd)
+
+		MessageEnd::ClockInOutSSDCallMessage1SendingEnd(Employee ClockInOutSSDCallMessage1)
+		ExecutionEnd::ClockInOutSSDExecution1StartEnd(ClockInOutService ClockInOutSSDExecution1)
+		ExecutionEnd::ClockInOutSSDExecution1FinishEnd(ClockInOutService ClockInOutSSDExecution1)
+		MessageEnd::ClockInOutSSDCallMessage1ReturnReceivingEnd(Employee ClockInOutSSDCallMessage1Return)
+		MessageEnd::ClockInOutSSDCallMessage3SendingEnd(Employee ClockInOutSSDCallMessage3)
+		ExecutionEnd::ClockInOutSSDExecution2StartEnd(ClockInOutService ClockInOutSSDExecution2)
+		ExecutionEnd::ClockInOutSSDExecution2FinishEnd(ClockInOutService ClockInOutSSDExecution2)
+		MessageEnd::ClockInOutSSDCallMessage3ReturnReceivingEnd(Employee ClockInOutSSDCallMessage3Return)
+		MessageEnd::ClockInOutSSDCallMessage5SendingEnd(Employee ClockInOutSSDCallMessage5)
+		ExecutionEnd::ClockInOutSSDExecution3StartEnd(ClockInOutService ClockInOutSSDExecution3)
+		ExecutionEnd::ClockInOutSSDExecution3FinishEnd(ClockInOutService ClockInOutSSDExecution3)
+		MessageEnd::ClockInOutSSDCallMessage5ReturnReceivingEnd(Employee ClockInOutSSDCallMessage5Return)
+
+	}
+
+	Interaction ViewAttendanceRecordByEmployeeSSD {
+
+		[Participants: Employee ViewAttendanceRecordByEmployeeService]
+
+		CallMessage::ViewAttendanceRecordByEmployeeSSDCallMessage1(requestAttendanceRecord ViewAttendanceRecordByEmployeeSSDCallMessage1SendingEnd -> ViewAttendanceRecordByEmployeeSSDExecution1StartEnd)
+		ReturnMessage::ViewAttendanceRecordByEmployeeSSDCallMessage1Return(ViewAttendanceRecordByEmployeeSSDExecution1FinishEnd -> ViewAttendanceRecordByEmployeeSSDCallMessage1ReturnReceivingEnd ViewAttendanceRecordByEmployeeSSDCallMessage1)
+		CallMessage::ViewAttendanceRecordByEmployeeSSDCallMessage3(retrieveAttendanceData ViewAttendanceRecordByEmployeeSSDCallMessage3SendingEnd -> ViewAttendanceRecordByEmployeeSSDExecution2StartEnd)
+		ReturnMessage::ViewAttendanceRecordByEmployeeSSDCallMessage3Return(ViewAttendanceRecordByEmployeeSSDExecution2FinishEnd -> ViewAttendanceRecordByEmployeeSSDCallMessage3ReturnReceivingEnd ViewAttendanceRecordByEmployeeSSDCallMessage3)
+		CallMessage::ViewAttendanceRecordByEmployeeSSDCallMessage5(displayAttendanceRecord ViewAttendanceRecordByEmployeeSSDCallMessage5SendingEnd -> ViewAttendanceRecordByEmployeeSSDExecution3StartEnd)
+		ReturnMessage::ViewAttendanceRecordByEmployeeSSDCallMessage5Return(ViewAttendanceRecordByEmployeeSSDExecution3FinishEnd -> ViewAttendanceRecordByEmployeeSSDCallMessage5ReturnReceivingEnd ViewAttendanceRecordByEmployeeSSDCallMessage5)
+
+		Execution::ViewAttendanceRecordByEmployeeSSDExecution1(ViewAttendanceRecordByEmployeeService ViewAttendanceRecordByEmployeeSSDExecution1StartEnd ViewAttendanceRecordByEmployeeSSDExecution1FinishEnd)
+		Execution::ViewAttendanceRecordByEmployeeSSDExecution2(ViewAttendanceRecordByEmployeeService ViewAttendanceRecordByEmployeeSSDExecution2StartEnd ViewAttendanceRecordByEmployeeSSDExecution2FinishEnd)
+		Execution::ViewAttendanceRecordByEmployeeSSDExecution3(ViewAttendanceRecordByEmployeeService ViewAttendanceRecordByEmployeeSSDExecution3StartEnd ViewAttendanceRecordByEmployeeSSDExecution3FinishEnd)
+
+		MessageEnd::ViewAttendanceRecordByEmployeeSSDCallMessage1SendingEnd(Employee ViewAttendanceRecordByEmployeeSSDCallMessage1)
+		ExecutionEnd::ViewAttendanceRecordByEmployeeSSDExecution1StartEnd(ViewAttendanceRecordByEmployeeService ViewAttendanceRecordByEmployeeSSDExecution1)
+		ExecutionEnd::ViewAttendanceRecordByEmployeeSSDExecution1FinishEnd(ViewAttendanceRecordByEmployeeService ViewAttendanceRecordByEmployeeSSDExecution1)
+		MessageEnd::ViewAttendanceRecordByEmployeeSSDCallMessage1ReturnReceivingEnd(Employee ViewAttendanceRecordByEmployeeSSDCallMessage1Return)
+		MessageEnd::ViewAttendanceRecordByEmployeeSSDCallMessage3SendingEnd(Employee ViewAttendanceRecordByEmployeeSSDCallMessage3)
+		ExecutionEnd::ViewAttendanceRecordByEmployeeSSDExecution2StartEnd(ViewAttendanceRecordByEmployeeService ViewAttendanceRecordByEmployeeSSDExecution2)
+		ExecutionEnd::ViewAttendanceRecordByEmployeeSSDExecution2FinishEnd(ViewAttendanceRecordByEmployeeService ViewAttendanceRecordByEmployeeSSDExecution2)
+		MessageEnd::ViewAttendanceRecordByEmployeeSSDCallMessage3ReturnReceivingEnd(Employee ViewAttendanceRecordByEmployeeSSDCallMessage3Return)
+		MessageEnd::ViewAttendanceRecordByEmployeeSSDCallMessage5SendingEnd(Employee ViewAttendanceRecordByEmployeeSSDCallMessage5)
+		ExecutionEnd::ViewAttendanceRecordByEmployeeSSDExecution3StartEnd(ViewAttendanceRecordByEmployeeService ViewAttendanceRecordByEmployeeSSDExecution3)
+		ExecutionEnd::ViewAttendanceRecordByEmployeeSSDExecution3FinishEnd(ViewAttendanceRecordByEmployeeService ViewAttendanceRecordByEmployeeSSDExecution3)
+		MessageEnd::ViewAttendanceRecordByEmployeeSSDCallMessage5ReturnReceivingEnd(Employee ViewAttendanceRecordByEmployeeSSDCallMessage5Return)
+
+	}
+
+	Interaction ViewAttendanceRecordByManagerSSD {
+
+		[Participants: Manager ViewAttendanceRecordByManagerService]
+
+		CallMessage::ViewAttendanceRecordByManagerSSDCallMessage1(selectEmployeeRecord ViewAttendanceRecordByManagerSSDCallMessage1SendingEnd -> ViewAttendanceRecordByManagerSSDExecution1StartEnd)
+		ReturnMessage::ViewAttendanceRecordByManagerSSDCallMessage1Return(ViewAttendanceRecordByManagerSSDExecution1FinishEnd -> ViewAttendanceRecordByManagerSSDCallMessage1ReturnReceivingEnd ViewAttendanceRecordByManagerSSDCallMessage1)
+		CallMessage::ViewAttendanceRecordByManagerSSDCallMessage3(fetchEmployeeAttendance ViewAttendanceRecordByManagerSSDCallMessage3SendingEnd -> ViewAttendanceRecordByManagerSSDExecution2StartEnd)
+		ReturnMessage::ViewAttendanceRecordByManagerSSDCallMessage3Return(ViewAttendanceRecordByManagerSSDExecution2FinishEnd -> ViewAttendanceRecordByManagerSSDCallMessage3ReturnReceivingEnd ViewAttendanceRecordByManagerSSDCallMessage3)
+		CallMessage::ViewAttendanceRecordByManagerSSDCallMessage5(showEmployeeRecord ViewAttendanceRecordByManagerSSDCallMessage5SendingEnd -> ViewAttendanceRecordByManagerSSDExecution3StartEnd)
+		ReturnMessage::ViewAttendanceRecordByManagerSSDCallMessage5Return(ViewAttendanceRecordByManagerSSDExecution3FinishEnd -> ViewAttendanceRecordByManagerSSDCallMessage5ReturnReceivingEnd ViewAttendanceRecordByManagerSSDCallMessage5)
+
+		Execution::ViewAttendanceRecordByManagerSSDExecution1(ViewAttendanceRecordByManagerService ViewAttendanceRecordByManagerSSDExecution1StartEnd ViewAttendanceRecordByManagerSSDExecution1FinishEnd)
+		Execution::ViewAttendanceRecordByManagerSSDExecution2(ViewAttendanceRecordByManagerService ViewAttendanceRecordByManagerSSDExecution2StartEnd ViewAttendanceRecordByManagerSSDExecution2FinishEnd)
+		Execution::ViewAttendanceRecordByManagerSSDExecution3(ViewAttendanceRecordByManagerService ViewAttendanceRecordByManagerSSDExecution3StartEnd ViewAttendanceRecordByManagerSSDExecution3FinishEnd)
+
+		MessageEnd::ViewAttendanceRecordByManagerSSDCallMessage1SendingEnd(Manager ViewAttendanceRecordByManagerSSDCallMessage1)
+		ExecutionEnd::ViewAttendanceRecordByManagerSSDExecution1StartEnd(ViewAttendanceRecordByManagerService ViewAttendanceRecordByManagerSSDExecution1)
+		ExecutionEnd::ViewAttendanceRecordByManagerSSDExecution1FinishEnd(ViewAttendanceRecordByManagerService ViewAttendanceRecordByManagerSSDExecution1)
+		MessageEnd::ViewAttendanceRecordByManagerSSDCallMessage1ReturnReceivingEnd(Manager ViewAttendanceRecordByManagerSSDCallMessage1Return)
+		MessageEnd::ViewAttendanceRecordByManagerSSDCallMessage3SendingEnd(Manager ViewAttendanceRecordByManagerSSDCallMessage3)
+		ExecutionEnd::ViewAttendanceRecordByManagerSSDExecution2StartEnd(ViewAttendanceRecordByManagerService ViewAttendanceRecordByManagerSSDExecution2)
+		ExecutionEnd::ViewAttendanceRecordByManagerSSDExecution2FinishEnd(ViewAttendanceRecordByManagerService ViewAttendanceRecordByManagerSSDExecution2)
+		MessageEnd::ViewAttendanceRecordByManagerSSDCallMessage3ReturnReceivingEnd(Manager ViewAttendanceRecordByManagerSSDCallMessage3Return)
+		MessageEnd::ViewAttendanceRecordByManagerSSDCallMessage5SendingEnd(Manager ViewAttendanceRecordByManagerSSDCallMessage5)
+		ExecutionEnd::ViewAttendanceRecordByManagerSSDExecution3StartEnd(ViewAttendanceRecordByManagerService ViewAttendanceRecordByManagerSSDExecution3)
+		ExecutionEnd::ViewAttendanceRecordByManagerSSDExecution3FinishEnd(ViewAttendanceRecordByManagerService ViewAttendanceRecordByManagerSSDExecution3)
+		MessageEnd::ViewAttendanceRecordByManagerSSDCallMessage5ReturnReceivingEnd(Manager ViewAttendanceRecordByManagerSSDCallMessage5Return)
+
+	}
+
+	Interaction GenerateAttendanceReportSSD {
+
+		[Participants: Manager GenerateAttendanceReportService]
+
+		CallMessage::GenerateAttendanceReportSSDCallMessage1(initiateReportGeneration GenerateAttendanceReportSSDCallMessage1SendingEnd -> GenerateAttendanceReportSSDExecution1StartEnd)
+		ReturnMessage::GenerateAttendanceReportSSDCallMessage1Return(GenerateAttendanceReportSSDExecution1FinishEnd -> GenerateAttendanceReportSSDCallMessage1ReturnReceivingEnd GenerateAttendanceReportSSDCallMessage1)
+		CallMessage::GenerateAttendanceReportSSDCallMessage3(compileAttendanceData GenerateAttendanceReportSSDCallMessage3SendingEnd -> GenerateAttendanceReportSSDExecution2StartEnd)
+		ReturnMessage::GenerateAttendanceReportSSDCallMessage3Return(GenerateAttendanceReportSSDExecution2FinishEnd -> GenerateAttendanceReportSSDCallMessage3ReturnReceivingEnd GenerateAttendanceReportSSDCallMessage3)
+		CallMessage::GenerateAttendanceReportSSDCallMessage5(generateReport GenerateAttendanceReportSSDCallMessage5SendingEnd -> GenerateAttendanceReportSSDExecution3StartEnd)
+		ReturnMessage::GenerateAttendanceReportSSDCallMessage5Return(GenerateAttendanceReportSSDExecution3FinishEnd -> GenerateAttendanceReportSSDCallMessage5ReturnReceivingEnd GenerateAttendanceReportSSDCallMessage5)
+
+		Execution::GenerateAttendanceReportSSDExecution1(GenerateAttendanceReportService GenerateAttendanceReportSSDExecution1StartEnd GenerateAttendanceReportSSDExecution1FinishEnd)
+		Execution::GenerateAttendanceReportSSDExecution2(GenerateAttendanceReportService GenerateAttendanceReportSSDExecution2StartEnd GenerateAttendanceReportSSDExecution2FinishEnd)
+		Execution::GenerateAttendanceReportSSDExecution3(GenerateAttendanceReportService GenerateAttendanceReportSSDExecution3StartEnd GenerateAttendanceReportSSDExecution3FinishEnd)
+
+		MessageEnd::GenerateAttendanceReportSSDCallMessage1SendingEnd(Manager GenerateAttendanceReportSSDCallMessage1)
+		ExecutionEnd::GenerateAttendanceReportSSDExecution1StartEnd(GenerateAttendanceReportService GenerateAttendanceReportSSDExecution1)
+		ExecutionEnd::GenerateAttendanceReportSSDExecution1FinishEnd(GenerateAttendanceReportService GenerateAttendanceReportSSDExecution1)
+		MessageEnd::GenerateAttendanceReportSSDCallMessage1ReturnReceivingEnd(Manager GenerateAttendanceReportSSDCallMessage1Return)
+		MessageEnd::GenerateAttendanceReportSSDCallMessage3SendingEnd(Manager GenerateAttendanceReportSSDCallMessage3)
+		ExecutionEnd::GenerateAttendanceReportSSDExecution2StartEnd(GenerateAttendanceReportService GenerateAttendanceReportSSDExecution2)
+		ExecutionEnd::GenerateAttendanceReportSSDExecution2FinishEnd(GenerateAttendanceReportService GenerateAttendanceReportSSDExecution2)
+		MessageEnd::GenerateAttendanceReportSSDCallMessage3ReturnReceivingEnd(Manager GenerateAttendanceReportSSDCallMessage3Return)
+		MessageEnd::GenerateAttendanceReportSSDCallMessage5SendingEnd(Manager GenerateAttendanceReportSSDCallMessage5)
+		ExecutionEnd::GenerateAttendanceReportSSDExecution3StartEnd(GenerateAttendanceReportService GenerateAttendanceReportSSDExecution3)
+		ExecutionEnd::GenerateAttendanceReportSSDExecution3FinishEnd(GenerateAttendanceReportService GenerateAttendanceReportSSDExecution3)
+		MessageEnd::GenerateAttendanceReportSSDCallMessage5ReturnReceivingEnd(Manager GenerateAttendanceReportSSDCallMessage5Return)
+
+	}
+
+	Service AttendanceMSSystem {
+
+	}
+
+	Service ThirdPartyServices {
+
+	}
+
+	Service ClockInOutService {
+
+		[Operation]
+		startClockIn(employeeId)
+		recordClockTime(employeeId,time)
+		endClockIn(employeeId)
+
+	}
+
+	Service ViewAttendanceRecordByEmployeeService {
+
+		[Operation]
+		requestAttendanceRecord(employeeId)
+		retrieveAttendanceData(employeeId,startDate,endDate)
+		displayAttendanceRecord(records)
+
+	}
+
+	Service ViewAttendanceRecordByManagerService {
+
+		[Operation]
+		selectEmployeeRecord(managerId,employeeId)
+		fetchEmployeeAttendance(employeeId)
+		showEmployeeRecord(records)
+
+	}
+
+	Service GenerateAttendanceReportService {
+
+		[Operation]
+		initiateReportGeneration(managerId)
+		compileAttendanceData(employeeId, startDate, endDate)
+		generateReport(managerId, records)
+
+	}
+
+// Contract 1: 员工签到
+	Contract ClockInOutService::startClockIn(employeeId: String): Boolean {
+
+		definition:
+			employee:Employee
+
+		precondition:
+			employee.Id = employeeId and
+			employee.oclIsUndefined() = false
+
+		postcondition:
+			let session:AttendanceSession in
+			session.oclIsNew() and
+			session.SessionId = generateUniqueId() and
+			session.StartTime = Now() and
+			employee.CurrentSession = session and
+			result = true
+	}
+
+// Contract 2: 记录打卡时间
+	Contract ClockInOutService::recordClockTime(employeeId: String, time: Date): Boolean {
+
+		definition:
+			employee:Employee
+
+		precondition:
+			employee.Id = employeeId and
+			employee.oclIsUndefined() = false and
+			employee.CurrentSession.oclIsUndefined() = false
+
+		postcondition:
+			let record:AttendanceRecord in
+			record.oclIsNew() and
+			record.RecordId = generateUniqueId() and
+			record.ClockTime = time and
+			record.Type = AttendanceType::CLOCKIN and
+			record.AttendanceRecordToEmployee = employee and
+			record.AttendanceRecordToSession = employee.CurrentSession and
+			result = true
+	}
+
+// Contract 3: 员工签退
+	Contract ClockInOutService::endClockIn(employeeId: String): Boolean {
+
+		definition:
+			employee:Employee
+
+		precondition:
+			employee.Id = employeeId and
+			employee.oclIsUndefined() = false and
+			employee.CurrentSession.oclIsUndefined() = false
+
+		postcondition:
+			employee.CurrentSession.EndTime = Now() and
+			employee.CurrentSession = null and
+			result = true
+	}
+
+// Contract 4: 员工请求查看出勤记录
+	Contract ViewAttendanceRecordByEmployeeService::requestAttendanceRecord(employeeId: String): Boolean {
+
+		definition:
+			employee:Employee
+
+		precondition:
+			employee.Id = employeeId and
+			employee.oclIsUndefined() = false
+
+		postcondition:
+			result = true
+	}
+
+// Contract 5: 检索出勤数据
+	Contract ViewAttendanceRecordByEmployeeService::retrieveAttendanceData(employeeId: String, startDate: Date, endDate: Date): Set(AttendanceRecord) {
+
+		definition:
+			employee:Employee
+
+		precondition:
+			employee.Id = employeeId and
+			employee.oclIsUndefined() = false and
+			startDate < endDate
+
+		postcondition:
+			result = employee.EmployeeToAttendanceRecord
+	}
+
+// Contract 6: 显示出勤记录
+	Contract ViewAttendanceRecordByEmployeeService::displayAttendanceRecord(records: Set(AttendanceRecord)): Boolean {
+
+		precondition:
+			records.oclIsUndefined() = false
+
+		postcondition:
+			result = true
+	}
+
+	// Contract 7: 经理选择员工记录
+	Contract ViewAttendanceRecordByManagerService::selectEmployeeRecord(managerId: String, employeeId: String): Boolean {
+
+		definition:
+			manager:Manager,
+			employee:Employee
+
+		precondition:
+			manager.Id = managerId and
+			manager.oclIsUndefined() = false and
+			employee.Id = employeeId and
+			employee.oclIsUndefined() = false
+
+		postcondition:
+			result = true
+	}
+
+// Contract 8: 获取员工出勤记录
+	Contract ViewAttendanceRecordByManagerService::fetchEmployeeAttendance(employeeId: String): Set(AttendanceRecord) {
+
+		definition:
+			employee:Employee
+
+		precondition:
+			employee.Id = employeeId and
+			employee.oclIsUndefined() = false
+
+		postcondition:
+			result = employee.EmployeeToAttendanceRecord
+	}
+
+// Contract 9: 显示员工出勤记录
+	Contract ViewAttendanceRecordByManagerService::showEmployeeRecord(records: Set(AttendanceRecord)): Boolean {
+
+		precondition:
+			records.oclIsUndefined() = false
+
+		postcondition:
+			result = true
+	}
+
+// Contract 10: 发起报告生成
+	Contract GenerateAttendanceReportService::initiateReportGeneration(managerId: String): Boolean {
+
+		definition:
+			manager:Manager
+
+		precondition:
+			manager.Id = managerId and
+			manager.oclIsUndefined() = false
+
+		postcondition:
+			let report:Report in
+			report.oclIsNew() and
+			report.ReportId = generateUniqueId() and
+			report.GenerateDate = Now() and
+			manager.ManagerToReport->includes(report) and
+			manager.CurrentReport = report and
+			result = true
+	}
+
+// Contract 11: 编译出勤数据
+	Contract GenerateAttendanceReportService::compileAttendanceData(employeeId: String, startDate: Date, endDate: Date): Set(AttendanceRecord) {
+
+		definition:
+			employee:Employee
+
+		precondition:
+			employee.Id = employeeId and
+			employee.oclIsUndefined() = false and
+			startDate < endDate
+
+		postcondition:
+			result = employee.EmployeeToAttendanceRecord
+	}
+
+// Contract 12:  生成报告
+	Contract GenerateAttendanceReportService::generateReport(managerId: String, records: Set(AttendanceRecord)): Boolean {
+
+		definition:
+			manager:Manager
+
+		precondition:
+			manager.Id = managerId and
+			manager.oclIsUndefined() = false and
+			records.oclIsUndefined() = false
+
+		postcondition:
+			manager.CurrentReport.ReportToAttendanceRecord = records and
+			manager.CurrentReport.Summary = "Attendance Report Generated" and
+			result = true
+	}
+
+}
+
+DomainModel AttendanceMS {
+
+	Entity Employee {
+		Id : String
+		Name : String
+		Department : String
+
+		[Refer]
+		EmployeetoAttendanceRecord : AttendanceRecord* Association
+	}
+
+	Entity AttendanceRecord {
+		RecordId : Date
+		ClockTime : Date
+		Type : AttendanceType[CLOCKIN|CLOCKOUT]
+	}
+
+	Entity Manager extends Employee {
+		Id: String
+		Name: String
+		Level: Integer
+	}
+
+	Entity AttendanceSession {
+		SessionId: String
+		StartTime: Date
+		EndTime: Date
+
+		[Refer]
+		SessionToAttendanceRecord: AttendanceRecord* Association
+	}
+
+	Entity Department {
+		DeptId: String
+		DeptName: String
+
+		[Refer]
+		DepartmentToEmployee: Employee* Association
+	}
+
+	Entity Report {
+		ReportId: String
+		GenerateDate: Date
+		Summary: String
+
+		[Refer]
+		ReportToManager: Manager! Association
+		ReportToAttendanceRecord: AttendanceRecord* Association
+	}
+
+	Entity ClockDevice {
+		DeviceId: String
+		Location: String
+
+		[Refer]
+		DeviceToAttendanceRecord: AttendanceRecord* Association
+	}
+
+	Entity Shift {
+		ShiftId: String
+		StartTime: Date
+		EndTime: Date
+
+		[Refer]
+		ShiftToSession: AttendanceSession* Association
+	}
+
+}
+
