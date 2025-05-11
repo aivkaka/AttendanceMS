@@ -5,8 +5,6 @@
 
 2.概念类图
 概念类图定义了考勤系统的七个核心实体：Employee（员工）、Manager（经理）、AttendanceRecord（出勤记录）、AttendanceSession（出勤会话）、Report（报告）、CheckInDevice（打卡设备）、Shift（班次）。
-Manager 继承自 Employee，通过 Extends 实现。
-实体之间的关联（如 EmployeeToAttendanceRecord, SessionToShift）支持功能需求 FR1-FR11，包括记录创建、查询和报告生成。
 
 3.顺序图
 顺序图共 4 个，分别对应四个用例，展示员工和经理与系统之间的交互。
