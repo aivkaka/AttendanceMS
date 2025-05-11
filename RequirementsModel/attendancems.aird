@@ -16,11 +16,11 @@
         <description xmi:type="description_2:SequenceDiagramDescription" href="platform:/plugin/net.mydreamy.requirementmodel.design/description/requirementmodel.odesign#//@ownedViewpoints[name='RequirementModel']/@ownedRepresentations[name='SequenceDiagram']"/>
         <target xmi:type="rEMODEL:Interaction" href="attendancems.remodel#//@UseCaseModel/@interaction.0"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_J-Z18g3XEfCyMJmU3vOxAg" name="ViewAttendanceRecordByEmployeeSSD" repPath="#_J-Z18A3XEfCyMJmU3vOxAg" changeId="0f81117b-73f5-4965-9501-687364c63c63">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_J-Z18g3XEfCyMJmU3vOxAg" name="ViewAttendanceRecordByEmployeeSSD" repPath="#_J-Z18A3XEfCyMJmU3vOxAg" changeId="1547e730-d6cc-4cdb-9b00-a8a38f4c9682">
         <description xmi:type="description_2:SequenceDiagramDescription" href="platform:/plugin/net.mydreamy.requirementmodel.design/description/requirementmodel.odesign#//@ownedViewpoints[name='RequirementModel']/@ownedRepresentations[name='SequenceDiagram']"/>
         <target xmi:type="rEMODEL:Interaction" href="attendancems.remodel#//@UseCaseModel/@interaction.1"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Rfk2cg3ZEfCyMJmU3vOxAg" name="ViewAttendanceRecordByManagerSSD" repPath="#_Rfk2cA3ZEfCyMJmU3vOxAg" changeId="461b11ad-78ab-44c6-88fd-a3e5335a5f55">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Rfk2cg3ZEfCyMJmU3vOxAg" name="ViewAttendanceRecordByManagerSSD" repPath="#_Rfk2cA3ZEfCyMJmU3vOxAg" changeId="4b17a67a-7a47-4fcd-8cf0-362009a8effa">
         <description xmi:type="description_2:SequenceDiagramDescription" href="platform:/plugin/net.mydreamy.requirementmodel.design/description/requirementmodel.odesign#//@ownedViewpoints[name='RequirementModel']/@ownedRepresentations[name='SequenceDiagram']"/>
         <target xmi:type="rEMODEL:Interaction" href="attendancems.remodel#//@UseCaseModel/@interaction.2"/>
       </ownedRepresentationDescriptors>
@@ -1547,7 +1547,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:InstanceRoleMapping" href="platform:/plugin/net.mydreamy.requirementmodel.design/description/requirementmodel.odesign#//@ownedViewpoints[name='RequirementModel']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Participant']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_pi-P8A3XEfCyMJmU3vOxAg" name="requestAttendanceRecord ()" sourceNode="_J-bEEQ3XEfCyMJmU3vOxAg" targetNode="_J-bEFA3XEfCyMJmU3vOxAg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_pi-P8A3XEfCyMJmU3vOxAg" name="requestAttendanceRecord (employeeId)" sourceNode="_J-bEEQ3XEfCyMJmU3vOxAg" targetNode="_J-bEFA3XEfCyMJmU3vOxAg">
       <target xmi:type="rEMODEL:CallMessage" href="attendancems.remodel#//@UseCaseModel/@interaction.1/@messages.0"/>
       <semanticElements xmi:type="rEMODEL:CallMessage" href="attendancems.remodel#//@UseCaseModel/@interaction.1/@messages.0"/>
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_pi-3BA3XEfCyMJmU3vOxAg" y="196" height="0"/>
@@ -1569,7 +1569,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:ReturnMessageMapping" href="platform:/plugin/net.mydreamy.requirementmodel.design/description/requirementmodel.odesign#//@ownedViewpoints[name='RequirementModel']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@edgeMappings[name='ReturnMessage']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Fi7TtA3YEfCyMJmU3vOxAg" name="retrieveAttendanceData ()" sourceNode="_J-bEEQ3XEfCyMJmU3vOxAg" targetNode="_J-bEFA3XEfCyMJmU3vOxAg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Fi7TtA3YEfCyMJmU3vOxAg" name="retrieveAttendanceData (employeeId, startDate, endDate)" sourceNode="_J-bEEQ3XEfCyMJmU3vOxAg" targetNode="_J-bEFA3XEfCyMJmU3vOxAg">
       <target xmi:type="rEMODEL:CallMessage" href="attendancems.remodel#//@UseCaseModel/@interaction.1/@messages.2"/>
       <semanticElements xmi:type="rEMODEL:CallMessage" href="attendancems.remodel#//@UseCaseModel/@interaction.1/@messages.2"/>
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_Fi76wA3YEfCyMJmU3vOxAg" y="367" height="0"/>
@@ -1591,7 +1591,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:ReturnMessageMapping" href="platform:/plugin/net.mydreamy.requirementmodel.design/description/requirementmodel.odesign#//@ownedViewpoints[name='RequirementModel']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@edgeMappings[name='ReturnMessage']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_y5h6OA3YEfCyMJmU3vOxAg" name="displayAttendanceRecord ()" sourceNode="_J-bEEQ3XEfCyMJmU3vOxAg" targetNode="_J-bEFA3XEfCyMJmU3vOxAg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_y5h6OA3YEfCyMJmU3vOxAg" name="displayAttendanceRecord (records)" sourceNode="_J-bEEQ3XEfCyMJmU3vOxAg" targetNode="_J-bEFA3XEfCyMJmU3vOxAg">
       <target xmi:type="rEMODEL:CallMessage" href="attendancems.remodel#//@UseCaseModel/@interaction.1/@messages.4"/>
       <semanticElements xmi:type="rEMODEL:CallMessage" href="attendancems.remodel#//@UseCaseModel/@interaction.1/@messages.4"/>
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_y5h6PQ3YEfCyMJmU3vOxAg" y="521" height="0"/>
@@ -1863,7 +1863,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:InstanceRoleMapping" href="platform:/plugin/net.mydreamy.requirementmodel.design/description/requirementmodel.odesign#//@ownedViewpoints[name='RequirementModel']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Participant']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_aG8U4A3ZEfCyMJmU3vOxAg" name="selectEmployeeRecord ()" sourceNode="_RfmEkA3ZEfCyMJmU3vOxAg" targetNode="_RfmEkw3ZEfCyMJmU3vOxAg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_aG8U4A3ZEfCyMJmU3vOxAg" name="selectEmployeeRecord (managerId, employeeId)" sourceNode="_RfmEkA3ZEfCyMJmU3vOxAg" targetNode="_RfmEkw3ZEfCyMJmU3vOxAg">
       <target xmi:type="rEMODEL:CallMessage" href="attendancems.remodel#//@UseCaseModel/@interaction.2/@messages.0"/>
       <semanticElements xmi:type="rEMODEL:CallMessage" href="attendancems.remodel#//@UseCaseModel/@interaction.2/@messages.0"/>
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_aG879A3ZEfCyMJmU3vOxAg" y="181" height="0"/>
@@ -1885,7 +1885,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:ReturnMessageMapping" href="platform:/plugin/net.mydreamy.requirementmodel.design/description/requirementmodel.odesign#//@ownedViewpoints[name='RequirementModel']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@edgeMappings[name='ReturnMessage']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_bg3VNA3ZEfCyMJmU3vOxAg" name="fetchEmployeeAttendance ()" sourceNode="_RfmEkA3ZEfCyMJmU3vOxAg" targetNode="_RfmEkw3ZEfCyMJmU3vOxAg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_bg3VNA3ZEfCyMJmU3vOxAg" name="fetchEmployeeAttendance (employeeId)" sourceNode="_RfmEkA3ZEfCyMJmU3vOxAg" targetNode="_RfmEkw3ZEfCyMJmU3vOxAg">
       <target xmi:type="rEMODEL:CallMessage" href="attendancems.remodel#//@UseCaseModel/@interaction.2/@messages.2"/>
       <semanticElements xmi:type="rEMODEL:CallMessage" href="attendancems.remodel#//@UseCaseModel/@interaction.2/@messages.2"/>
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_bg38QA3ZEfCyMJmU3vOxAg" y="328" height="0"/>
@@ -1907,7 +1907,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:ReturnMessageMapping" href="platform:/plugin/net.mydreamy.requirementmodel.design/description/requirementmodel.odesign#//@ownedViewpoints[name='RequirementModel']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@edgeMappings[name='ReturnMessage']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_dFfwuA3ZEfCyMJmU3vOxAg" name="showEmployeeRecord ()" sourceNode="_RfmEkA3ZEfCyMJmU3vOxAg" targetNode="_RfmEkw3ZEfCyMJmU3vOxAg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_dFfwuA3ZEfCyMJmU3vOxAg" name="showEmployeeRecord (records)" sourceNode="_RfmEkA3ZEfCyMJmU3vOxAg" targetNode="_RfmEkw3ZEfCyMJmU3vOxAg">
       <target xmi:type="rEMODEL:CallMessage" href="attendancems.remodel#//@UseCaseModel/@interaction.2/@messages.4"/>
       <semanticElements xmi:type="rEMODEL:CallMessage" href="attendancems.remodel#//@UseCaseModel/@interaction.2/@messages.4"/>
       <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" uid="_dFgXwA3ZEfCyMJmU3vOxAg" y="473" height="0"/>
