@@ -1,0 +1,99 @@
+MicroServiceModel AttendanceMS {
+	MicroService EmployeeService {
+		ProvidedInterface clockInOut{
+			[Operation]
+			clockInOut
+		}
+		ProvidedInterface viewAttendanceRecordByEmployee{
+			[Operation]
+			viewAttendanceRecordByEmployee
+		}
+		ProvidedInterface manageEmployee{
+			[Operation]
+			createEmployee
+			queryEmployee
+			updateEmployee
+			modifyEmployee
+		}
+		ProvidedInterface manageAttendanceRecord{
+			[Operation]
+			createAttendanceRecord
+			queryAttendanceRecord
+			updateAttendanceRecord
+			modifyAttendanceRecord
+		}
+		RequiredInterface manageAttendanceSession
+		DomainModel EmployeeService {
+			 Entity Shift {
+				ShiftId : String
+				StartTime : Date
+				EndTime : Date
+				[Refer]
+			}
+			 Entity Employee {
+				Id : String
+				Name : String
+				Department : String
+				[Refer]
+				EmployeetoAttendanceRecord : AttendanceRecord  Association
+			}
+			 Entity ClockDevice {
+				DeviceId : String
+				Location : String
+				[Refer]
+				DeviceToAttendanceRecord : AttendanceRecord  Association
+			}
+			 Entity AttendanceRecord {
+				RecordId : Date
+				ClockTime : Date
+				Type : Integer
+				[Refer]
+			}
+		}
+	}
+	MicroService ManagerService {
+		ProvidedInterface generateAttendanceReport{
+			[Operation]
+			generateAttendanceReport
+		}
+		ProvidedInterface viewAttendanceRecordByManager{
+			[Operation]
+			viewAttendanceRecordByManager
+		}
+		ProvidedInterface manageAttendanceSession{
+			[Operation]
+			createAttendanceSession
+			queryAttendanceSession
+			updateAttendanceSession
+			modifyAttendanceSession
+		}
+		RequiredInterface manageEmployee
+		RequiredInterface manageAttendanceRecord
+		DomainModel ManagerService {
+			 Entity Department {
+				DeptId : String
+				DeptName : String
+				[Refer]
+			}
+			 Entity Report {
+				ReportId : String
+				GenerateDate : Date
+				Summary : String
+				[Refer]
+				ReportToManager : Manager  Association
+			}
+			 Entity AttendanceSession {
+				SessionId : String
+				StartTime : Date
+				EndTime : Date
+				[Refer]
+			}
+			 Entity Manager {
+				Id : String
+				Name : String
+				Level : Integer
+				[Refer]
+			}
+		}
+	}
+}

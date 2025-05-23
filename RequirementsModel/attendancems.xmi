@@ -1,0 +1,1330 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rEMODEL:RequirementModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rEMODEL="http://www.mydreamy.net/requirementmodel/REMODEL">
+  <UseCaseModel name="AttendanceMS">
+    <uc name="clockInOut">
+      <ssd href="attendancems.remodel#|0"/>
+      <service href="attendancems.remodel#|1"/>
+    </uc>
+    <uc name="viewAttendanceRecordByEmployee">
+      <ssd href="attendancems.remodel#|2"/>
+      <service href="attendancems.remodel#|3"/>
+    </uc>
+    <uc name="viewAttendanceRecordByManager">
+      <ssd href="attendancems.remodel#|4"/>
+      <service href="attendancems.remodel#|5"/>
+    </uc>
+    <uc name="generateAttendanceReport" UCRelation="include">
+      <relateduc href="attendancems.remodel#|6"/>
+      <ssd href="attendancems.remodel#|7"/>
+      <service href="attendancems.remodel#|8"/>
+    </uc>
+    <actor name="Employee">
+      <uc href="attendancems.remodel#|9"/>
+      <uc href="attendancems.remodel#|10"/>
+    </actor>
+    <actor name="Manager">
+      <uc href="attendancems.remodel#|11"/>
+      <uc href="attendancems.remodel#|12"/>
+    </actor>
+    <interaction name="ClockInOutSSD">
+      <participants href="attendancems.remodel#|13"/>
+      <participants href="attendancems.remodel#|14"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="ClockInOutSSDCallMessage1">
+        <sendingEnd href="attendancems.remodel#|16"/>
+        <receivingEnd href="attendancems.remodel#|17"/>
+        <op href="attendancems.remodel#|15"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ClockInOutSSDCallMessage1Return">
+        <sendingEnd href="attendancems.remodel#|18"/>
+        <receivingEnd href="attendancems.remodel#|19"/>
+        <invocationMessage href="attendancems.remodel#|20"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="ClockInOutSSDCallMessage3">
+        <sendingEnd href="attendancems.remodel#|22"/>
+        <receivingEnd href="attendancems.remodel#|23"/>
+        <op href="attendancems.remodel#|21"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ClockInOutSSDCallMessage3Return">
+        <sendingEnd href="attendancems.remodel#|24"/>
+        <receivingEnd href="attendancems.remodel#|25"/>
+        <invocationMessage href="attendancems.remodel#|26"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="ClockInOutSSDCallMessage5">
+        <sendingEnd href="attendancems.remodel#|28"/>
+        <receivingEnd href="attendancems.remodel#|29"/>
+        <op href="attendancems.remodel#|27"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ClockInOutSSDCallMessage5Return">
+        <sendingEnd href="attendancems.remodel#|30"/>
+        <receivingEnd href="attendancems.remodel#|31"/>
+        <invocationMessage href="attendancems.remodel#|32"/>
+      </messages>
+      <executions name="ClockInOutSSDExecution1">
+        <owner href="attendancems.remodel#|33"/>
+        <start href="attendancems.remodel#|34"/>
+        <end href="attendancems.remodel#|35"/>
+      </executions>
+      <executions name="ClockInOutSSDExecution2">
+        <owner href="attendancems.remodel#|36"/>
+        <start href="attendancems.remodel#|37"/>
+        <end href="attendancems.remodel#|38"/>
+      </executions>
+      <executions name="ClockInOutSSDExecution3">
+        <owner href="attendancems.remodel#|39"/>
+        <start href="attendancems.remodel#|40"/>
+        <end href="attendancems.remodel#|41"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ClockInOutSSDCallMessage1SendingEnd">
+        <context href="attendancems.remodel#|42"/>
+        <message href="attendancems.remodel#|43"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ClockInOutSSDExecution1StartEnd">
+        <context href="attendancems.remodel#|44"/>
+        <execution href="attendancems.remodel#|45"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ClockInOutSSDExecution1FinishEnd">
+        <context href="attendancems.remodel#|46"/>
+        <execution href="attendancems.remodel#|47"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ClockInOutSSDCallMessage1ReturnReceivingEnd">
+        <context href="attendancems.remodel#|48"/>
+        <message href="attendancems.remodel#|49"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ClockInOutSSDCallMessage3SendingEnd">
+        <context href="attendancems.remodel#|50"/>
+        <message href="attendancems.remodel#|51"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ClockInOutSSDExecution2StartEnd">
+        <context href="attendancems.remodel#|52"/>
+        <execution href="attendancems.remodel#|53"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ClockInOutSSDExecution2FinishEnd">
+        <context href="attendancems.remodel#|54"/>
+        <execution href="attendancems.remodel#|55"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ClockInOutSSDCallMessage3ReturnReceivingEnd">
+        <context href="attendancems.remodel#|56"/>
+        <message href="attendancems.remodel#|57"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ClockInOutSSDCallMessage5SendingEnd">
+        <context href="attendancems.remodel#|58"/>
+        <message href="attendancems.remodel#|59"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ClockInOutSSDExecution3StartEnd">
+        <context href="attendancems.remodel#|60"/>
+        <execution href="attendancems.remodel#|61"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ClockInOutSSDExecution3FinishEnd">
+        <context href="attendancems.remodel#|62"/>
+        <execution href="attendancems.remodel#|63"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ClockInOutSSDCallMessage5ReturnReceivingEnd">
+        <context href="attendancems.remodel#|64"/>
+        <message href="attendancems.remodel#|65"/>
+      </ends>
+    </interaction>
+    <interaction name="ViewAttendanceRecordByEmployeeSSD">
+      <participants href="attendancems.remodel#|66"/>
+      <participants href="attendancems.remodel#|67"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="ViewAttendanceRecordByEmployeeSSDCallMessage1">
+        <sendingEnd href="attendancems.remodel#|69"/>
+        <receivingEnd href="attendancems.remodel#|70"/>
+        <op href="attendancems.remodel#|68"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ViewAttendanceRecordByEmployeeSSDCallMessage1Return">
+        <sendingEnd href="attendancems.remodel#|71"/>
+        <receivingEnd href="attendancems.remodel#|72"/>
+        <invocationMessage href="attendancems.remodel#|73"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="ViewAttendanceRecordByEmployeeSSDCallMessage3">
+        <sendingEnd href="attendancems.remodel#|75"/>
+        <receivingEnd href="attendancems.remodel#|76"/>
+        <op href="attendancems.remodel#|74"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ViewAttendanceRecordByEmployeeSSDCallMessage3Return">
+        <sendingEnd href="attendancems.remodel#|77"/>
+        <receivingEnd href="attendancems.remodel#|78"/>
+        <invocationMessage href="attendancems.remodel#|79"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="ViewAttendanceRecordByEmployeeSSDCallMessage5">
+        <sendingEnd href="attendancems.remodel#|81"/>
+        <receivingEnd href="attendancems.remodel#|82"/>
+        <op href="attendancems.remodel#|80"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ViewAttendanceRecordByEmployeeSSDCallMessage5Return">
+        <sendingEnd href="attendancems.remodel#|83"/>
+        <receivingEnd href="attendancems.remodel#|84"/>
+        <invocationMessage href="attendancems.remodel#|85"/>
+      </messages>
+      <executions name="ViewAttendanceRecordByEmployeeSSDExecution1">
+        <owner href="attendancems.remodel#|86"/>
+        <start href="attendancems.remodel#|87"/>
+        <end href="attendancems.remodel#|88"/>
+      </executions>
+      <executions name="ViewAttendanceRecordByEmployeeSSDExecution2">
+        <owner href="attendancems.remodel#|89"/>
+        <start href="attendancems.remodel#|90"/>
+        <end href="attendancems.remodel#|91"/>
+      </executions>
+      <executions name="ViewAttendanceRecordByEmployeeSSDExecution3">
+        <owner href="attendancems.remodel#|92"/>
+        <start href="attendancems.remodel#|93"/>
+        <end href="attendancems.remodel#|94"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAttendanceRecordByEmployeeSSDCallMessage1SendingEnd">
+        <context href="attendancems.remodel#|95"/>
+        <message href="attendancems.remodel#|96"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAttendanceRecordByEmployeeSSDExecution1StartEnd">
+        <context href="attendancems.remodel#|97"/>
+        <execution href="attendancems.remodel#|98"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAttendanceRecordByEmployeeSSDExecution1FinishEnd">
+        <context href="attendancems.remodel#|99"/>
+        <execution href="attendancems.remodel#|100"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAttendanceRecordByEmployeeSSDCallMessage1ReturnReceivingEnd">
+        <context href="attendancems.remodel#|101"/>
+        <message href="attendancems.remodel#|102"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAttendanceRecordByEmployeeSSDCallMessage3SendingEnd">
+        <context href="attendancems.remodel#|103"/>
+        <message href="attendancems.remodel#|104"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAttendanceRecordByEmployeeSSDExecution2StartEnd">
+        <context href="attendancems.remodel#|105"/>
+        <execution href="attendancems.remodel#|106"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAttendanceRecordByEmployeeSSDExecution2FinishEnd">
+        <context href="attendancems.remodel#|107"/>
+        <execution href="attendancems.remodel#|108"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAttendanceRecordByEmployeeSSDCallMessage3ReturnReceivingEnd">
+        <context href="attendancems.remodel#|109"/>
+        <message href="attendancems.remodel#|110"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAttendanceRecordByEmployeeSSDCallMessage5SendingEnd">
+        <context href="attendancems.remodel#|111"/>
+        <message href="attendancems.remodel#|112"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAttendanceRecordByEmployeeSSDExecution3StartEnd">
+        <context href="attendancems.remodel#|113"/>
+        <execution href="attendancems.remodel#|114"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAttendanceRecordByEmployeeSSDExecution3FinishEnd">
+        <context href="attendancems.remodel#|115"/>
+        <execution href="attendancems.remodel#|116"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAttendanceRecordByEmployeeSSDCallMessage5ReturnReceivingEnd">
+        <context href="attendancems.remodel#|117"/>
+        <message href="attendancems.remodel#|118"/>
+      </ends>
+    </interaction>
+    <interaction name="ViewAttendanceRecordByManagerSSD">
+      <participants href="attendancems.remodel#|119"/>
+      <participants href="attendancems.remodel#|120"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="ViewAttendanceRecordByManagerSSDCallMessage1">
+        <sendingEnd href="attendancems.remodel#|122"/>
+        <receivingEnd href="attendancems.remodel#|123"/>
+        <op href="attendancems.remodel#|121"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ViewAttendanceRecordByManagerSSDCallMessage1Return">
+        <sendingEnd href="attendancems.remodel#|124"/>
+        <receivingEnd href="attendancems.remodel#|125"/>
+        <invocationMessage href="attendancems.remodel#|126"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="ViewAttendanceRecordByManagerSSDCallMessage3">
+        <sendingEnd href="attendancems.remodel#|128"/>
+        <receivingEnd href="attendancems.remodel#|129"/>
+        <op href="attendancems.remodel#|127"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ViewAttendanceRecordByManagerSSDCallMessage3Return">
+        <sendingEnd href="attendancems.remodel#|130"/>
+        <receivingEnd href="attendancems.remodel#|131"/>
+        <invocationMessage href="attendancems.remodel#|132"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="ViewAttendanceRecordByManagerSSDCallMessage5">
+        <sendingEnd href="attendancems.remodel#|134"/>
+        <receivingEnd href="attendancems.remodel#|135"/>
+        <op href="attendancems.remodel#|133"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ViewAttendanceRecordByManagerSSDCallMessage5Return">
+        <sendingEnd href="attendancems.remodel#|136"/>
+        <receivingEnd href="attendancems.remodel#|137"/>
+        <invocationMessage href="attendancems.remodel#|138"/>
+      </messages>
+      <executions name="ViewAttendanceRecordByManagerSSDExecution1">
+        <owner href="attendancems.remodel#|139"/>
+        <start href="attendancems.remodel#|140"/>
+        <end href="attendancems.remodel#|141"/>
+      </executions>
+      <executions name="ViewAttendanceRecordByManagerSSDExecution2">
+        <owner href="attendancems.remodel#|142"/>
+        <start href="attendancems.remodel#|143"/>
+        <end href="attendancems.remodel#|144"/>
+      </executions>
+      <executions name="ViewAttendanceRecordByManagerSSDExecution3">
+        <owner href="attendancems.remodel#|145"/>
+        <start href="attendancems.remodel#|146"/>
+        <end href="attendancems.remodel#|147"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAttendanceRecordByManagerSSDCallMessage1SendingEnd">
+        <context href="attendancems.remodel#|148"/>
+        <message href="attendancems.remodel#|149"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAttendanceRecordByManagerSSDExecution1StartEnd">
+        <context href="attendancems.remodel#|150"/>
+        <execution href="attendancems.remodel#|151"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAttendanceRecordByManagerSSDExecution1FinishEnd">
+        <context href="attendancems.remodel#|152"/>
+        <execution href="attendancems.remodel#|153"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAttendanceRecordByManagerSSDCallMessage1ReturnReceivingEnd">
+        <context href="attendancems.remodel#|154"/>
+        <message href="attendancems.remodel#|155"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAttendanceRecordByManagerSSDCallMessage3SendingEnd">
+        <context href="attendancems.remodel#|156"/>
+        <message href="attendancems.remodel#|157"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAttendanceRecordByManagerSSDExecution2StartEnd">
+        <context href="attendancems.remodel#|158"/>
+        <execution href="attendancems.remodel#|159"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAttendanceRecordByManagerSSDExecution2FinishEnd">
+        <context href="attendancems.remodel#|160"/>
+        <execution href="attendancems.remodel#|161"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAttendanceRecordByManagerSSDCallMessage3ReturnReceivingEnd">
+        <context href="attendancems.remodel#|162"/>
+        <message href="attendancems.remodel#|163"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAttendanceRecordByManagerSSDCallMessage5SendingEnd">
+        <context href="attendancems.remodel#|164"/>
+        <message href="attendancems.remodel#|165"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAttendanceRecordByManagerSSDExecution3StartEnd">
+        <context href="attendancems.remodel#|166"/>
+        <execution href="attendancems.remodel#|167"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAttendanceRecordByManagerSSDExecution3FinishEnd">
+        <context href="attendancems.remodel#|168"/>
+        <execution href="attendancems.remodel#|169"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAttendanceRecordByManagerSSDCallMessage5ReturnReceivingEnd">
+        <context href="attendancems.remodel#|170"/>
+        <message href="attendancems.remodel#|171"/>
+      </ends>
+    </interaction>
+    <interaction name="GenerateAttendanceReportSSD">
+      <participants href="attendancems.remodel#|172"/>
+      <participants href="attendancems.remodel#|173"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="GenerateAttendanceReportSSDCallMessage1">
+        <sendingEnd href="attendancems.remodel#|175"/>
+        <receivingEnd href="attendancems.remodel#|176"/>
+        <op href="attendancems.remodel#|174"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="GenerateAttendanceReportSSDCallMessage1Return">
+        <sendingEnd href="attendancems.remodel#|177"/>
+        <receivingEnd href="attendancems.remodel#|178"/>
+        <invocationMessage href="attendancems.remodel#|179"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="GenerateAttendanceReportSSDCallMessage3">
+        <sendingEnd href="attendancems.remodel#|181"/>
+        <receivingEnd href="attendancems.remodel#|182"/>
+        <op href="attendancems.remodel#|180"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="GenerateAttendanceReportSSDCallMessage3Return">
+        <sendingEnd href="attendancems.remodel#|183"/>
+        <receivingEnd href="attendancems.remodel#|184"/>
+        <invocationMessage href="attendancems.remodel#|185"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="GenerateAttendanceReportSSDCallMessage5">
+        <sendingEnd href="attendancems.remodel#|187"/>
+        <receivingEnd href="attendancems.remodel#|188"/>
+        <op href="attendancems.remodel#|186"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="GenerateAttendanceReportSSDCallMessage5Return">
+        <sendingEnd href="attendancems.remodel#|189"/>
+        <receivingEnd href="attendancems.remodel#|190"/>
+        <invocationMessage href="attendancems.remodel#|191"/>
+      </messages>
+      <executions name="GenerateAttendanceReportSSDExecution1">
+        <owner href="attendancems.remodel#|192"/>
+        <start href="attendancems.remodel#|193"/>
+        <end href="attendancems.remodel#|194"/>
+      </executions>
+      <executions name="GenerateAttendanceReportSSDExecution2">
+        <owner href="attendancems.remodel#|195"/>
+        <start href="attendancems.remodel#|196"/>
+        <end href="attendancems.remodel#|197"/>
+      </executions>
+      <executions name="GenerateAttendanceReportSSDExecution3">
+        <owner href="attendancems.remodel#|198"/>
+        <start href="attendancems.remodel#|199"/>
+        <end href="attendancems.remodel#|200"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="GenerateAttendanceReportSSDCallMessage1SendingEnd">
+        <context href="attendancems.remodel#|201"/>
+        <message href="attendancems.remodel#|202"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="GenerateAttendanceReportSSDExecution1StartEnd">
+        <context href="attendancems.remodel#|203"/>
+        <execution href="attendancems.remodel#|204"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="GenerateAttendanceReportSSDExecution1FinishEnd">
+        <context href="attendancems.remodel#|205"/>
+        <execution href="attendancems.remodel#|206"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="GenerateAttendanceReportSSDCallMessage1ReturnReceivingEnd">
+        <context href="attendancems.remodel#|207"/>
+        <message href="attendancems.remodel#|208"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="GenerateAttendanceReportSSDCallMessage3SendingEnd">
+        <context href="attendancems.remodel#|209"/>
+        <message href="attendancems.remodel#|210"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="GenerateAttendanceReportSSDExecution2StartEnd">
+        <context href="attendancems.remodel#|211"/>
+        <execution href="attendancems.remodel#|212"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="GenerateAttendanceReportSSDExecution2FinishEnd">
+        <context href="attendancems.remodel#|213"/>
+        <execution href="attendancems.remodel#|214"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="GenerateAttendanceReportSSDCallMessage3ReturnReceivingEnd">
+        <context href="attendancems.remodel#|215"/>
+        <message href="attendancems.remodel#|216"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="GenerateAttendanceReportSSDCallMessage5SendingEnd">
+        <context href="attendancems.remodel#|217"/>
+        <message href="attendancems.remodel#|218"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="GenerateAttendanceReportSSDExecution3StartEnd">
+        <context href="attendancems.remodel#|219"/>
+        <execution href="attendancems.remodel#|220"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="GenerateAttendanceReportSSDExecution3FinishEnd">
+        <context href="attendancems.remodel#|221"/>
+        <execution href="attendancems.remodel#|222"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="GenerateAttendanceReportSSDCallMessage5ReturnReceivingEnd">
+        <context href="attendancems.remodel#|223"/>
+        <message href="attendancems.remodel#|224"/>
+      </ends>
+    </interaction>
+    <service name="AttendanceMSSystem"/>
+    <service name="ThirdPartyServices"/>
+    <service name="ClockInOutService">
+      <operation name="startClockIn">
+        <parameter name="employeeId"/>
+      </operation>
+      <operation name="recordClockTime">
+        <parameter name="employeeId"/>
+        <parameter name="time"/>
+      </operation>
+      <operation name="endClockIn">
+        <parameter name="employeeId"/>
+      </operation>
+    </service>
+    <service name="ViewAttendanceRecordByEmployeeService">
+      <operation name="requestAttendanceRecord">
+        <parameter name="employeeId"/>
+      </operation>
+      <operation name="retrieveAttendanceData">
+        <parameter name="employeeId"/>
+        <parameter name="startDate"/>
+        <parameter name="endDate"/>
+      </operation>
+      <operation name="displayAttendanceRecord">
+        <parameter name="records"/>
+      </operation>
+    </service>
+    <service name="ViewAttendanceRecordByManagerService">
+      <operation name="selectEmployeeRecord">
+        <parameter name="managerId"/>
+        <parameter name="employeeId"/>
+      </operation>
+      <operation name="fetchEmployeeAttendance">
+        <parameter name="employeeId"/>
+      </operation>
+      <operation name="showEmployeeRecord">
+        <parameter name="records"/>
+      </operation>
+    </service>
+    <service name="GenerateAttendanceReportService">
+      <operation name="initiateReportGeneration">
+        <parameter name="managerId"/>
+      </operation>
+      <operation name="compileAttendanceData">
+        <parameter name="employeeId"/>
+        <parameter name="startDate"/>
+        <parameter name="endDate"/>
+      </operation>
+      <operation name="generateReport">
+        <parameter name="managerId"/>
+        <parameter name="records"/>
+      </operation>
+    </service>
+    <contract>
+      <service href="attendancems.remodel#|225"/>
+      <op name="startClockIn">
+        <parameter name="employeeId">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <def>
+        <variable name="employee">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|226"/>
+          </type>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Id">
+              <name symbol="employee"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="employeeId"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="employee"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LetExpCS">
+          <variable name="session">
+            <type xsi:type="rEMODEL:EntityType">
+              <entity href="attendancems.remodel#|227"/>
+            </type>
+          </variable>
+          <inExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression">
+              <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+                <object symbol="session"/>
+                <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsNew()"/>
+              </leftside>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="SessionId">
+                <name symbol="session"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:OperationCallExpCS" name="generateUniqueId"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="StartTime">
+                <name symbol="session"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:OperationCallExpCS" name="Now"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="CurrentSession">
+                <name symbol="employee"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:VariableExpCS" symbol="session"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+            </atomicexp>
+            <connector>and</connector>
+            <connector>and</connector>
+            <connector>and</connector>
+            <connector>and</connector>
+          </inExpression>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="attendancems.remodel#|228"/>
+      <op name="recordClockTime">
+        <parameter name="employeeId">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <parameter name="time">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Date"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <def>
+        <variable name="employee">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|229"/>
+          </type>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Id">
+              <name symbol="employee"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="employeeId"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="employee"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="employee"/>
+              <property symbol="CurrentSession"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LetExpCS">
+          <variable name="record">
+            <type xsi:type="rEMODEL:EntityType">
+              <entity href="attendancems.remodel#|230"/>
+            </type>
+          </variable>
+          <inExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression">
+              <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+                <object symbol="record"/>
+                <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsNew()"/>
+              </leftside>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="RecordId">
+                <name symbol="record"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:OperationCallExpCS" name="generateUniqueId"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="ClockTime">
+                <name symbol="record"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:VariableExpCS" symbol="time"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Type">
+                <name symbol="record"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:EnumLiteralExpCS" enumname="AttendanceType" eunmitem="CLOCKIN"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="AttendanceRecordToEmployee">
+                <name symbol="record"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:VariableExpCS" symbol="employee"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="AttendanceRecordToSession">
+                <name symbol="record"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:PropertyCallExpCS" attribute="CurrentSession">
+                <name symbol="employee"/>
+              </rightside>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+            </atomicexp>
+            <connector>and</connector>
+            <connector>and</connector>
+            <connector>and</connector>
+            <connector>and</connector>
+            <connector>and</connector>
+            <connector>and</connector>
+          </inExpression>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="attendancems.remodel#|231"/>
+      <op name="endClockIn">
+        <parameter name="employeeId">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <def>
+        <variable name="employee">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|232"/>
+          </type>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Id">
+              <name symbol="employee"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="employeeId"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="employee"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="employee"/>
+              <property symbol="CurrentSession"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="EndTime">
+              <name symbol="employee"/>
+              <selfproperty symbol="CurrentSession"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:OperationCallExpCS" name="Now"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="CurrentSession">
+              <name symbol="employee"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:NullLiteralExpCS" symbol="null"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+          <connector>and</connector>
+          <connector>and</connector>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="attendancems.remodel#|233"/>
+      <op name="requestAttendanceRecord">
+        <parameter name="employeeId">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <def>
+        <variable name="employee">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|234"/>
+          </type>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Id">
+              <name symbol="employee"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="employeeId"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="employee"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="attendancems.remodel#|235"/>
+      <op name="retrieveAttendanceData">
+        <parameter name="employeeId">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <parameter name="startDate">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Date"/>
+        </parameter>
+        <parameter name="endDate">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Date"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:CollectionTypeCS">
+          <name name="Set"/>
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|236"/>
+          </type>
+        </returnType>
+      </op>
+      <def>
+        <variable name="employee">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|237"/>
+          </type>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Id">
+              <name symbol="employee"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="employeeId"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="employee"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="&lt;">
+            <leftside xsi:type="rEMODEL:VariableExpCS" symbol="startDate"/>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="endDate"/>
+          </atomicexp>
+          <connector>and</connector>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+            <rightside xsi:type="rEMODEL:PropertyCallExpCS" attribute="EmployeeToAttendanceRecord">
+              <name symbol="employee"/>
+            </rightside>
+          </atomicexp>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="attendancems.remodel#|238"/>
+      <op name="displayAttendanceRecord">
+        <parameter name="records">
+          <type xsi:type="rEMODEL:CollectionTypeCS">
+            <name name="Set"/>
+            <type xsi:type="rEMODEL:EntityType">
+              <entity href="attendancems.remodel#|239"/>
+            </type>
+          </type>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="records"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="attendancems.remodel#|240"/>
+      <op name="selectEmployeeRecord">
+        <parameter name="managerId">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <parameter name="employeeId">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <def>
+        <variable name="manager">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|241"/>
+          </type>
+        </variable>
+        <variable name="employee">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|242"/>
+          </type>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Id">
+              <name symbol="manager"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="managerId"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="manager"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Id">
+              <name symbol="employee"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="employeeId"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="employee"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+          <connector>and</connector>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="attendancems.remodel#|243"/>
+      <op name="fetchEmployeeAttendance">
+        <parameter name="employeeId">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:CollectionTypeCS">
+          <name name="Set"/>
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|244"/>
+          </type>
+        </returnType>
+      </op>
+      <def>
+        <variable name="employee">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|245"/>
+          </type>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Id">
+              <name symbol="employee"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="employeeId"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="employee"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+            <rightside xsi:type="rEMODEL:PropertyCallExpCS" attribute="EmployeeToAttendanceRecord">
+              <name symbol="employee"/>
+            </rightside>
+          </atomicexp>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="attendancems.remodel#|246"/>
+      <op name="showEmployeeRecord">
+        <parameter name="records">
+          <type xsi:type="rEMODEL:CollectionTypeCS">
+            <name name="Set"/>
+            <type xsi:type="rEMODEL:EntityType">
+              <entity href="attendancems.remodel#|247"/>
+            </type>
+          </type>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="records"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="attendancems.remodel#|248"/>
+      <op name="initiateReportGeneration">
+        <parameter name="managerId">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <def>
+        <variable name="manager">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|249"/>
+          </type>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Id">
+              <name symbol="manager"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="managerId"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="manager"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LetExpCS">
+          <variable name="report">
+            <type xsi:type="rEMODEL:EntityType">
+              <entity href="attendancems.remodel#|250"/>
+            </type>
+          </variable>
+          <inExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression">
+              <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+                <object symbol="report"/>
+                <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsNew()"/>
+              </leftside>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="ReportId">
+                <name symbol="report"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:OperationCallExpCS" name="generateUniqueId"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="GenerateDate">
+                <name symbol="report"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:OperationCallExpCS" name="Now"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression">
+              <leftside xsi:type="rEMODEL:StandardNavigationCallExpCS" navop="->">
+                <propertycall attribute="ManagerToReport">
+                  <name symbol="manager"/>
+                </propertycall>
+                <standardOP name="includes" object="report"/>
+              </leftside>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="CurrentReport">
+                <name symbol="manager"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:VariableExpCS" symbol="report"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+            </atomicexp>
+            <connector>and</connector>
+            <connector>and</connector>
+            <connector>and</connector>
+            <connector>and</connector>
+            <connector>and</connector>
+          </inExpression>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="attendancems.remodel#|251"/>
+      <op name="compileAttendanceData">
+        <parameter name="employeeId">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <parameter name="startDate">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Date"/>
+        </parameter>
+        <parameter name="endDate">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Date"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:CollectionTypeCS">
+          <name name="Set"/>
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|252"/>
+          </type>
+        </returnType>
+      </op>
+      <def>
+        <variable name="employee">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|253"/>
+          </type>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Id">
+              <name symbol="employee"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="employeeId"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="employee"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="&lt;">
+            <leftside xsi:type="rEMODEL:VariableExpCS" symbol="startDate"/>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="endDate"/>
+          </atomicexp>
+          <connector>and</connector>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+            <rightside xsi:type="rEMODEL:PropertyCallExpCS" attribute="EmployeeToAttendanceRecord">
+              <name symbol="employee"/>
+            </rightside>
+          </atomicexp>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="attendancems.remodel#|254"/>
+      <op name="generateReport">
+        <parameter name="managerId">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <parameter name="records">
+          <type xsi:type="rEMODEL:CollectionTypeCS">
+            <name name="Set"/>
+            <type xsi:type="rEMODEL:EntityType">
+              <entity href="attendancems.remodel#|255"/>
+            </type>
+          </type>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <def>
+        <variable name="manager">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="attendancems.remodel#|256"/>
+          </type>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Id">
+              <name symbol="manager"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="managerId"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="manager"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="records"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="ReportToAttendanceRecord">
+              <name symbol="manager"/>
+              <selfproperty symbol="CurrentReport"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:VariableExpCS" symbol="records"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Summary">
+              <name symbol="manager"/>
+              <selfproperty symbol="CurrentReport"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:StringLiteralExpCS" symbol="&quot;Attendance Report Generated&quot;"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+          <connector>and</connector>
+          <connector>and</connector>
+        </oclexp>
+      </post>
+    </contract>
+  </UseCaseModel>
+  <DomainModel name="AttendanceMS">
+    <entity name="Employee">
+      <attributes name="Id">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="Name">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="Department">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <reference name="EmployeetoAttendanceRecord" ismultiple="true" type="Association">
+        <entity href="attendancems.remodel#|257"/>
+      </reference>
+    </entity>
+    <entity name="AttendanceRecord">
+      <attributes name="RecordId">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Date"/>
+      </attributes>
+      <attributes name="ClockTime">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Date"/>
+      </attributes>
+      <attributes name="Type">
+        <type xsi:type="rEMODEL:EnumEntity" name="AttendanceType">
+          <element name="CLOCKIN"/>
+          <element name="CLOCKOUT"/>
+        </type>
+      </attributes>
+    </entity>
+    <entity name="Manager">
+      <superEntity href="attendancems.remodel#|258"/>
+      <attributes name="Id">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="Name">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="Level">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Integer"/>
+      </attributes>
+    </entity>
+    <entity name="AttendanceSession">
+      <attributes name="SessionId">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="StartTime">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Date"/>
+      </attributes>
+      <attributes name="EndTime">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Date"/>
+      </attributes>
+      <reference name="SessionToAttendanceRecord" ismultiple="true" type="Association">
+        <entity href="attendancems.remodel#|259"/>
+      </reference>
+    </entity>
+    <entity name="Department">
+      <attributes name="DeptId">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="DeptName">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <reference name="DepartmentToEmployee" ismultiple="true" type="Association">
+        <entity href="attendancems.remodel#|260"/>
+      </reference>
+    </entity>
+    <entity name="Report">
+      <attributes name="ReportId">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="GenerateDate">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Date"/>
+      </attributes>
+      <attributes name="Summary">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <reference name="ReportToManager" isReverseAssoication="true" type="Association">
+        <entity href="attendancems.remodel#|261"/>
+      </reference>
+      <reference name="ReportToAttendanceRecord" ismultiple="true" type="Association">
+        <entity href="attendancems.remodel#|262"/>
+      </reference>
+    </entity>
+    <entity name="ClockDevice">
+      <attributes name="DeviceId">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="Location">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <reference name="DeviceToAttendanceRecord" ismultiple="true" type="Association">
+        <entity href="attendancems.remodel#|263"/>
+      </reference>
+    </entity>
+    <entity name="Shift">
+      <attributes name="ShiftId">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="StartTime">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Date"/>
+      </attributes>
+      <attributes name="EndTime">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Date"/>
+      </attributes>
+      <reference name="ShiftToSession" ismultiple="true" type="Association">
+        <entity href="attendancems.remodel#|264"/>
+      </reference>
+    </entity>
+  </DomainModel>
+</rEMODEL:RequirementModel>
