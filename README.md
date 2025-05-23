@@ -6,3 +6,10 @@
 3.顺序图 顺序图共 4 个，分别对应四个用例，展示员工和经理与系统之间的交互。
 
 4.系统操作总数: 12 个 CheckInOutService: startClockIn, recordClockTime, endClockIn, ViewWorkoutRecordByMemberService: requestAttendanceRecord, retrieveAttendanceData, displayAttendanceRecord, ViewWorkoutRecordByStaffService: selectEmployeeRecord, fetchEmployeeAttendance, showEmployeeRecord,GenerateWorkoutReportService: initiateReportGeneration, compileAttendanceData, generateReport 系统合约数量: 12 个（每个操作对应一个 OCL 合约）
+
+
+任务二相关截图：
+![用例图](images/生成用例图.png)
+![类图](images/生成类图.png)
+
+
